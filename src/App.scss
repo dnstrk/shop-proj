@@ -15,12 +15,19 @@
     .orders {
         flex-direction: column;
         gap: 40px;
-        .ordersTitle {
-            font-size: 30px;
-            font-weight: bold;
-            .orderDate {
-                font-size: 18px;
-                font-weight: normal;
+        .orderHeader {
+            
+
+            .ordersTitle {
+                font-size: 30px;
+                font-weight: bold;
+                .orderDate {
+                    font-size: 18px;
+                    font-weight: normal;
+                }
+            }
+            .orderBtn {
+                // align-self: flex-start;
             }
         }
     }

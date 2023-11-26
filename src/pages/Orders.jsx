@@ -4,7 +4,7 @@ import axios from "axios";
 import AppContext from "../context";
 import Stub from "../components/Stub";
 
-export default function Orders() {
+export default function TestOrders() {
     const { onAddToCart, onAddToFavorite } = useContext(AppContext);
     const [orders, setOrders] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +25,14 @@ export default function Orders() {
         })();
     }, []);
 
-    // console.log(orders[0].items.map(item=>item.img))
+    const removeOrder = (id) => {
+        axios.delete(
+            `https://6549399bdd8ebcd4ab245c9f.mockapi.io/orders/${id}`
+        );
+        setOrders((prev) =>
+            prev.filter((item) => Number(item.id) != Number(id))
+        );
+    };
 
     return (
         <div className="content p-40 clear">
@@ -37,11 +44,20 @@ export default function Orders() {
                     <div className="orders d-flex">
                         {orders.map((item, index) => (
                             <div className="order" key={index}>
-                                <div className="ordersTitle mb-20">
-                                    Заказ #{item.id} <br />
-                                    <p className="orderDate mt-10">
-                                        ({item.date})
-                                    </p>
+                                <div className="orderHeader d-flex">
+                                    <div className="ordersTitle mb-20">
+                                        Заказ #{item.id} <br />
+                                        <p className="orderDate mt-10">
+                                            ({item.date})
+                                        </p>
+                                    </div>
+                                    <button className="orderBtn ml-50">
+                                        <img
+                                            onClick={() => removeOrder(item.id)}
+                                            src="img/remCartItem.svg"
+                                            alt="close"
+                                        />
+                                    </button>
                                 </div>
                                 <div className="cards d-flex">
                                     {item.items.map((card, index) => (

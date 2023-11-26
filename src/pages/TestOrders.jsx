@@ -25,6 +25,14 @@ export default function TestOrders() {
         })();
     }, []);
 
+    const removeOrder = (id) => {
+        axios.delete(
+            `https://6549399bdd8ebcd4ab245c9f.mockapi.io/orders/${id}`
+        );
+        setOrders((prev) =>
+            prev.filter((item) => Number(item.id) != Number(id))
+        );
+    };
 
     return (
         <div className="content p-40 clear">
@@ -36,9 +44,20 @@ export default function TestOrders() {
                     <div className="orders d-flex">
                         {orders.map((item, index) => (
                             <div className="order" key={index}>
-                                <div className="ordersTitle mb-20">
-                                    Заказ #{item.id} <br />
-                                    <p className="orderDate mt-10">({item.date})</p>
+                                <div className="orderHeader d-flex">
+                                    <div className="ordersTitle mb-20">
+                                        Заказ #{item.id} <br />
+                                        <p className="orderDate mt-10">
+                                            ({item.date})
+                                        </p>
+                                    </div>
+                                    <button className="orderBtn ml-50">
+                                        <img
+                                            onClick={() => removeOrder(item.id)}
+                                            src="img/remCartItem.svg"
+                                            alt="close"
+                                        />
+                                    </button>
                                 </div>
                                 <div className="cards d-flex">
                                     {item.items.map((card, index) => (

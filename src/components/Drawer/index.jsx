@@ -8,7 +8,7 @@ import { useCart } from "../../hooks/useCart";
 export default function Drawer({ onRemoveFromCart, opened }) {
     const { cartItems, setCartItems, totalPrice } = useCart();
     const { handleCart } = useContext(AppContext);
-    const [orderId, setOrderId] = useState();
+    const [orderId, setOrderId] = useState(1);
     const [isOrderComplete, setIsOrderComplete] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -26,6 +26,7 @@ export default function Drawer({ onRemoveFromCart, opened }) {
                 {
                     items: cartItems,
                     date: orderDate(),
+                    // parentID: orderId++
                 }
             );
 
@@ -35,7 +36,8 @@ export default function Drawer({ onRemoveFromCart, opened }) {
 
             for (let i = 0; i < cartItems.length; i++) {
                 const item = cartItems[i];
-                axios.delete(
+
+                await axios.delete(
                     "https://65415029f0b8287df1fe3a27.mockapi.io/cart/" +
                         item.id
                 );
