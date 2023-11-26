@@ -1,0 +1,38 @@
+.wrapper {
+    background: #fff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+    max-width: 1080px;
+    margin: 50px auto;
+}
+
+.content {
+    .cards {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .orders {
+        flex-direction: column;
+        gap: 40px;
+        .ordersTitle {
+            font-size: 30px;
+            font-weight: bold;
+            .orderDate {
+                font-size: 18px;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+.search-block {
+    border-radius: 10px;
+    border: 1px solid #f3f3f3;
+
+    padding: 0 15px;
+    input {
+        padding: 10px;
+        width: 250px;
+    }
+}
