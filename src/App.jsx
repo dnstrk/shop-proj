@@ -22,7 +22,6 @@ function App() {
     const [filter, setFilter] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
-
     useEffect(() => {
         async function fetchData() {
             try {
@@ -99,14 +98,15 @@ function App() {
     //ОБНОВЛЕНИЕ favoriteItems ДЛЯ ОТОБРАЖЕНИЯ
     const onAddToFavorite = async (obj) => {
         try {
-            if (
-                favoriteItems.find((item) => Number(item.id) == Number(obj.id))
-            ) {
+            const findItem = favoriteItems.find(
+                (item) => Number(item.parentID) == Number(obj.id)
+            );
+            if (findItem) {
                 axios.delete(
-                    `https://6549399bdd8ebcd4ab245c9f.mockapi.io/favorite/${obj.id}`
+                    `https://6549399bdd8ebcd4ab245c9f.mockapi.io/favorite/${findItem.id}`
                 );
                 setFavoriteItems((prev) =>
-                    prev.filter((item) => Number(item.id) !== Number(obj.id))
+                    prev.filter((item) => Number(item.parentID) !== Number(obj.id))
                 );
             } else {
                 const { data } = await axios.post(
@@ -144,7 +144,6 @@ function App() {
 
     const [drawerCardObj, setDrawerCardObj] = useState([]);
 
-
     return (
         <AppContext.Provider
             value={{
@@ -155,6 +154,7 @@ function App() {
                 isItemFavorite,
                 handleCart,
                 setCartItems,
+                setFavoriteItems,
                 onAddToCart,
                 onAddToFavorite,
                 setCardOpened,

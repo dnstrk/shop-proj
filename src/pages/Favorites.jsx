@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Card from "../components/Card";
 import AppContext from "../context";
 import Info from "../components/Info";
 import Stub from "../components/Stub";
+import axios from "axios";
 
 export default function Favorites() {
-    const { onAddToCart, onAddToFavorite, favoriteItems } =
+    const { onAddToCart, onAddToFavorite, favoriteItems, setFavoriteItems } =
         useContext(AppContext);
+
+
     return (
         <div className="content p-40 clear">
             <div className="d-flex justify-between align-center mb-40">

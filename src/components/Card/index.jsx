@@ -82,10 +82,15 @@ export default function Card({
                                 width={32}
                                 height={32}
                                 src={
-                                    isFavorite
+                                    isItemFavorite(id)
                                         ? "img/heart_liked.svg"
                                         : "img/heart_unliked.svg"
                                 }
+                                // src={
+                                //     isFavorite
+                                //         ? "img/heart_liked.svg"
+                                //         : "img/heart_unliked.svg"
+                                // }
                                 alt=""
                                 onClick={handleFavorite}
                             />
