@@ -7,13 +7,15 @@ export default function Card({
     img,
     price,
     name,
+    info,
     id,
     onAddToCart,
     onAddToFavorite,
     favorite = false,
     loading = false,
 }) {
-    const { isItemAdded, isItemFavorite } = useContext(AppContext);
+    const { isItemAdded, isItemFavorite, setCardOpened, setDrawerCardObj } =
+        useContext(AppContext);
     //маркер добавленного в избранное
     const [isFavorite, setIsFavorite] = useState(favorite);
     const obj = { id, parentID: id, img, price, name };
@@ -27,6 +29,18 @@ export default function Card({
     const handleFavorite = () => {
         onAddToFavorite(obj);
         setIsFavorite(!isFavorite);
+    };
+
+    const handleDrawerCard = () => {
+        setCardOpened(true);
+        setDrawerCardObj({
+            id,
+            parentID: id,
+            img,
+            price,
+            name,
+            info,
+        });
     };
 
     return (
@@ -83,6 +97,7 @@ export default function Card({
                         height={112}
                         src={img}
                         alt="sneakers"
+                        onClick={handleDrawerCard}
                     />
                     <p className="mb-15">{name}</p>
                     <div className="d-flex justify-between align-center">

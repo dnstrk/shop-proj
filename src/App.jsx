@@ -11,14 +11,17 @@ import Favorites from "./pages/Favorites";
 import AppContext from "./context";
 import Orders from "./pages/Orders";
 import TestOrders from "./pages/TestOrders";
+import DrawerCard from "./components/DrawerCard";
 
 function App() {
     const [items, setItems] = useState([]);
     const [cartItems, setCartItems] = useState([]);
     const [favoriteItems, setFavoriteItems] = useState([]);
     const [cartOpened, setCartOpened] = useState(false);
+    const [cardOpened, setCardOpened] = useState(false);
     const [filter, setFilter] = useState("");
     const [isLoading, setIsLoading] = useState(true);
+
 
     useEffect(() => {
         async function fetchData() {
@@ -139,6 +142,9 @@ function App() {
         return favoriteItems.some((obj) => Number(id) == Number(obj.parentID));
     };
 
+    const [drawerCardObj, setDrawerCardObj] = useState([]);
+
+
     return (
         <AppContext.Provider
             value={{
@@ -151,6 +157,9 @@ function App() {
                 setCartItems,
                 onAddToCart,
                 onAddToFavorite,
+                setCardOpened,
+                drawerCardObj,
+                setDrawerCardObj,
             }}
         >
             <div className="wrapper clear">
@@ -158,6 +167,10 @@ function App() {
                 <Drawer
                     onRemoveFromCart={onRemoveFromCart}
                     opened={cartOpened}
+                />
+                <DrawerCard
+                    cardOpened={cardOpened}
+                    setCardOpened={setCardOpened}
                 />
                 <Header handleCart={handleCart} />
                 <Routes>

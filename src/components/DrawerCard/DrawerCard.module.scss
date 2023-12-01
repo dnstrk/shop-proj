@@ -1,0 +1,113 @@
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    .drawerCard {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        position: absolute;
+        width: 800px;
+        height: 370px;
+        left: 30%;
+        top: 20%;
+        border-radius: 20px;
+        background: linear-gradient(
+            180deg,
+            rgba(27, 88, 110, 0.9864320728291317) 0%,
+            rgba(9, 121, 112, 1) 35%,
+            rgba(0, 212, 255, 1) 100%
+        );
+        color: #fff;
+
+        .closeBtn {
+            position: absolute;
+            left: 90%;
+            top: 11%;
+        }
+        .sneakName {
+            position: absolute;
+            left: 30%;
+            top: 13%;
+            text-decoration: underline;
+        }
+
+        .drawerCardImg {
+            margin: 100px 50px;
+            border: 1px #a07f7f solid;
+            border-radius: 20px;
+            background-color: #fff;
+
+            img {
+                padding: 17px 10px;
+                width: 170px;
+                height: 170px;
+            }
+        }
+
+        .drawerInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: left;
+            margin: 100px 0 30px 0 ;
+            max-height: 300px;
+            padding-right: 20px;
+            
+            .sneakText {
+                padding: 5px 10px;
+                max-height: 100px;
+                text-align: justify;
+                overflow: auto;
+                // border: 1px #000 solid;
+                border-radius: 10px 0 0 10px;
+            }
+            .sneakSize {
+                // display: flex;
+                // flex-direction: column;
+                // align-items: left;
+                // margin: 0;
+                ul {
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+
+                    li {
+                        padding: 5px;
+                        border: 0.5px #b3a4a4 solid;
+                        border-radius: 10px;
+                        transition: 0.3s;
+                        &:hover {
+                            background-color: #51c4c0;
+                            border-color: #fff;
+                        }
+                    }
+                }
+            }
+            .priceArea {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .plus {
+                    margin-left: 50px;
+                }
+            }
+        }
+    }
+}
+
+.overlayVisible {
+    visibility: visible;
+    opacity: 1;
+}
