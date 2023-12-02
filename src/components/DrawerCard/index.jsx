@@ -114,7 +114,7 @@ export default function DrawerCard({
                         {drawerCardObj.name}
                     </b>
                     <span className={cl.drawerCardRight_Price}>
-                        <b>Стоимость:</b> {drawerCardObj.price} руб.
+                        <b>Цена:</b> {drawerCardObj.price} руб.
                     </span>
                     <div className={cl.drawerCardRight_Info}>
                         <b className={cl.drawerCardRight_Info_Title}>
