@@ -84,9 +84,9 @@ export default function DrawerCard({
                     </div>
                     <div className={cl.drawerCardLeft_Action}>
                         <img
-                            className="cu-p"
-                            width={32}
-                            height={32}
+                            className={cl.addToCartBtn}
+                            width={42}
+                            height={42}
                             src={
                                 isItemAdded(obj.id)
                                     ? "img/addCartItemActive.svg"
@@ -96,9 +96,9 @@ export default function DrawerCard({
                             onClick={handlePlus}
                         />
                         <img
-                            className="cu-p"
-                            width={32}
-                            height={32}
+                            className={cl.addToFavBtn}
+                            width={42}
+                            height={42}
                             src={
                                 isItemFavorite(obj.id)
                                     ? "img/heart_liked.svg"

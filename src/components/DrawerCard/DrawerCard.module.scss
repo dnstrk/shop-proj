@@ -33,6 +33,14 @@
             left: 90%;
             top: 5%;
             cursor: pointer;
+            border-radius: 10px;
+            transition: 0.1s;
+            &:hover {
+                box-shadow: #696969 0px 0px 10px;
+            }
+            &:active {
+                transform: scale(95%);
+            }
         }
 
         .drawerCardLeft {
@@ -53,18 +61,44 @@
             .drawerCardLeft_Action {
                 display: flex;
                 flex-direction: row;
+                align-items: center;
                 justify-content: center;
                 gap: 50px;
+                .addToCartBtn {
+                    cursor: pointer;
+                    border-radius: 10px;
+                    box-shadow: #000000 0px 0px 3px;
+                    transition: 0.1s;
+                    &:hover {
+                        box-shadow: #696969 0px 0px 10px;
+                    }
+                    &:active {
+                        transform: scale(95%);
+                    }
+                }
+                .addToFavBtn {
+                    cursor: pointer;
+                    border-radius: 10px;
+                    box-shadow: #000000 0px 0px 3px;
+                    transition: 0.1s;
+                    &:hover {
+                        box-shadow: #696969 0px 0px 10px;
+                    }
+                    &:active {
+                        transform: scale(95%);
+                    }
+                }
             }
         }
         .drawerCardRight {
-            padding-top: 50px;
+            padding-top: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             gap: 20px;
 
             .drawerCardRight_Name {
+                width: 350px;
                 font-size: 28px;
             }
             .drawerCardRight_Price {
