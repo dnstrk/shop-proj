@@ -15,100 +15,65 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 50px;
 
         position: absolute;
-        width: 800px;
-        height: 370px;
-        left: 30%;
+        width: 680px;
+        height: 450px;
+        left: 31%;
         top: 20%;
-        border-radius: 20px;
-        background: linear-gradient(
-            180deg,
-            rgba(27, 88, 110, 0.9864320728291317) 0%,
-            rgba(9, 121, 112, 1) 35%,
-            rgba(0, 212, 255, 1) 100%
-        );
-        color: #fff;
+        border-radius: 45px;
+        background: #fff;
+        color: #000;
+
+        padding: 40px 30px;
 
         .closeBtn {
             position: absolute;
             left: 90%;
-            top: 11%;
+            top: 5%;
             cursor: pointer;
         }
-        .sneakName {
-            position: absolute;
-            left: 30%;
-            top: 13%;
-            text-decoration: underline;
-        }
 
-        .drawerCardImg {
-            margin: 100px 50px;
-            border: 1px #a07f7f solid;
-            border-radius: 20px;
-            background-color: #fff;
-
-            img {
-                padding: 17px 10px;
-                width: 170px;
-                height: 170px;
-            }
-        }
-
-        .drawerInfo {
+        .drawerCardLeft {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            align-items: left;
-            margin: 100px 0 30px 0;
-            max-height: 300px;
-            padding-right: 20px;
 
-            .sneakText {
-                padding: 5px 10px;
-                max-height: 100px;
-                text-align: justify;
-                overflow: auto;
-                // border: 1px #000 solid;
-                border-radius: 10px 0 0 10px;
+            .drawerCardLeft_Img {
             }
-            .sneakSize {
-                // display: flex;
-                // flex-direction: column;
-                // align-items: left;
-                // margin: 0;
+            .drawerCardLeft_Size {
                 ul {
-                    margin-top: 10px;
                     display: flex;
                     flex-direction: row;
+                    margin-top: 10px;
                     gap: 20px;
-
-                    li {
-                        padding: 5px;
-                        border: 0.5px #b3a4a4 solid;
-                        border-radius: 10px;
-                        transition: 0.3s background-color linear,
-                            0.3s border-color linear, 0.05s transform linear;
-                        cursor: pointer;
-                        &:hover {
-                            background-color: #51c4c0;
-                            border-color: #fff;
-                            transform: translate(-1px, -1px);
-                        }
-                        &:active {
-                            transform: translate(0px, 0px);
-                        }
-                    }
                 }
             }
-            .priceArea {
+            .drawerCardLeft_Action {
                 display: flex;
                 flex-direction: row;
-                align-items: center;
-                .plus {
-                    margin-left: 50px;
-                    cursor: pointer;
+                justify-content: center;
+                gap: 50px;
+            }
+        }
+        .drawerCardRight {
+            padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+
+            .drawerCardRight_Name {
+                font-size: 28px;
+            }
+            .drawerCardRight_Price {
+            }
+            .drawerCardRight_Info {
+                .drawerCardRight_Info_Text {
+                    margin-top: 10px;
+                    max-height: 150px;
+                    overflow: auto;
                 }
             }
         }
