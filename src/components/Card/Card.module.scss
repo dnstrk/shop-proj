@@ -11,12 +11,32 @@
     transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
     .favorite {
+        width: 32px;
+        height: 32px;
         position: absolute;
         cursor: pointer;
+        border-radius: 10px;
+        box-shadow: #8d8d8d 0px 0px 3px;
+        transition: 0.1s;
+        &:hover {
+            box-shadow: #c5c5c5 0px 0px 10px;
+        }
+        &:active {
+            transform: scale(95%);
+        }
     }
 
     .plus {
         cursor: pointer;
+        border-radius: 10px;
+        box-shadow: #8d8d8d 0px 0px 3px;
+        transition: 0.1s;
+        &:hover {
+            box-shadow: #c5c5c5 0px 0px 10px;
+        }
+        &:active {
+            transform: scale(95%);
+        }
     }
 
     p {
@@ -37,5 +57,8 @@
     &:hover {
         box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.05);
         transform: translateY(-5px);
+    }
+    &:active {
+        transform: scale(95%);
     }
 }
