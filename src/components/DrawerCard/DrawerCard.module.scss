@@ -35,8 +35,9 @@
             cursor: pointer;
             border-radius: 10px;
             transition: 0.1s;
+            box-shadow: #c2c2c2 0px 0px 3px;
             &:hover {
-                box-shadow: #696969 0px 0px 10px;
+                box-shadow: #a1a1a1 0px 0px 10px;
             }
             &:active {
                 transform: scale(95%);
@@ -67,10 +68,10 @@
                 .addToCartBtn {
                     cursor: pointer;
                     border-radius: 10px;
-                    box-shadow: #000000 0px 0px 3px;
+                    box-shadow: #6d6d6d 0px 0px 3px;
                     transition: 0.1s;
                     &:hover {
-                        box-shadow: #696969 0px 0px 10px;
+                        box-shadow: #a1a1a1 0px 0px 10px;
                     }
                     &:active {
                         transform: scale(95%);
@@ -79,10 +80,10 @@
                 .addToFavBtn {
                     cursor: pointer;
                     border-radius: 10px;
-                    box-shadow: #000000 0px 0px 3px;
+                    box-shadow: #6d6d6d 0px 0px 3px;
                     transition: 0.1s;
                     &:hover {
-                        box-shadow: #696969 0px 0px 10px;
+                        box-shadow: #a1a1a1 0px 0px 10px;
                     }
                     &:active {
                         transform: scale(95%);

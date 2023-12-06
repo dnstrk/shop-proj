@@ -3,4 +3,18 @@ header {
     h3 {
         margin: 0;
     }
+    ul li span {
+        transition: .1s;
+        &:hover {
+            color: red;
+        }
+    }
+    
+    // ul li {
+    //     transition: .1s;
+    //     &:active {
+    //         transform: translate(1px,1px);
+    //     }
+    // }
+
 }

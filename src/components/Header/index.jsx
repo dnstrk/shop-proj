@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
+import "./Header.module.scss";
 
 export default function Header({ handleCart }) {
     const { totalPrice } = useCart();
