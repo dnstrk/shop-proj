@@ -18,7 +18,7 @@ export default function Header({ handleCart }) {
                         alt="logo"
                     />
                     <div className="headerInfo">
-                        <h3 className="m-0 text-uppercase">React Sneakers</h3>
+                        <h3 className="m-0">Astral Step</h3>
                         <p className="opacity-5">Магазин лучших кроссовок</p>
                     </div>
                 </div>
